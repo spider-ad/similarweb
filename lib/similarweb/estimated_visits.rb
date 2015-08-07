@@ -1,4 +1,4 @@
-require 'Date'
+require 'date'
 module Similarweb
   module EstimatedVisits
     def estimated_visits(domain)
