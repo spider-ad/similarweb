@@ -7,7 +7,7 @@ module Similarweb
         :serkey => self.api_key
       })
 
-      response = self.http_client.get "#{domain}/v1/visits?#{params.to_query}"
+      response = self.http_client.get "#{domain}/v1/visits?#{to_query(params)}"
       JSON(response.body)
     end
   end

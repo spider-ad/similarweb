@@ -6,7 +6,7 @@ module Similarweb
         :serkey => self.api_key
       })
 
-      response = self.http_client.get "#{domain}/v1/leadingreferringsites?#{params.to_query}"
+      response = self.http_client.get "#{domain}/v1/leadingreferringsites?#{to_query(params)}"
       JSON(response.body)
     end
   end

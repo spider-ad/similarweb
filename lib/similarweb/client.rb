@@ -21,11 +21,13 @@ module Similarweb
       make_http_client!
     end
 
-    private
-
-      def make_http_client!
-        base_url = "http://api.similarweb.com/Site/"
-        self.http_client = Faraday.new(:url => base_url)
-      end
+    def to_query(hash)
+      hash.to_a.map { |x| "#{x[0]}=#{x[1]}" }.join("&")
+    end
+  private
+    def make_http_client!
+      base_url = "http://api.similarweb.com/Site/"
+      self.http_client = Faraday.new(:url => base_url)
+    end
   end
 end
