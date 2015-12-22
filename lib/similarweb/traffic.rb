@@ -1,7 +1,12 @@
 module Similarweb
   module Traffic
-    def traffic(domain)
-      response = self.http_client.get "#{domain}/v1/traffic?Format=JSON&UserKey=#{self.api_key}"
+    def traffic(domain, params = {})
+      params.merge!({
+        :Format => "JSON",
+        :serkey => self.api_key
+      })
+
+      response = self.http_client.get "#{domain}/v1/traffic?#{params.to_query}"
       JSON(response.body)
     end
   end
