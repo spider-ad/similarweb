@@ -4,7 +4,7 @@ module Similarweb
     def estimated_visits(domain, params = {})
       params.merge!({
         :Format => "JSON",
-        :serkey => self.api_key
+        :Userkey => self.api_key
       })
 
       response = self.http_client.get "#{domain}/v1/visits?#{to_query(params)}"
