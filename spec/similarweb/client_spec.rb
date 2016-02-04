@@ -107,6 +107,7 @@ describe Similarweb::Client do
   end
 
   describe '.estimated_visits' do
+    let(:date) { Date.today.prev_month.strftime("%m-%Y") }
     before(:each) do
       body = <<-eos
         {
@@ -114,7 +115,7 @@ describe Similarweb::Client do
         }
       eos
 
-      stub_request(:get, "http://api.similarweb.com/Site/example.com/v1/visits?Format=JSON&Userkey=test-key").
+      stub_request(:get, "http://api.similarweb.com/Site/example.com/v1/visits?Format=JSON&Userkey=test-key&Start=#{date}&End=#{date}").
          with(:headers => {'Accept'=>'*/*', 'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3', 'User-Agent'=>'Faraday v0.9.2'}).
         to_return(:status => 200, :body => body, :headers => {})
 
