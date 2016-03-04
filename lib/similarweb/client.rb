@@ -33,7 +33,7 @@ module Similarweb
   private
 
     def make_http_client!
-      base_url = "http://api.similarweb.com/Site/"
+      base_url = "https://api.similarweb.com/Site/"
       self.http_client = Faraday.new(:url => base_url)
     end
 
