@@ -10,7 +10,7 @@ module Similarweb
       params[:start] ||= date
       params[:end] ||= date
 
-      response = self.http_client.get "#{domain}/v1/visitduration", params
+      response = self.http_client.get "#{domain}/total-traffic-and-engagement/average-visit-duration?#{to_query(params)}"
       JSON(response.body)
     end
   end

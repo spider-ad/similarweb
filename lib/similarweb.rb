@@ -14,9 +14,10 @@ require 'similarweb/similar_sites'
 require 'similarweb/social_referrals'
 require 'similarweb/tags'
 require 'similarweb/traffic'
-require 'similarweb/pageviews'
 require 'similarweb/visit_duration'
 require 'similarweb/bounce_rate'
+require 'similarweb/pageviews_per_visit'
+require 'similarweb/global_rank'
 require 'similarweb/client'
 
 module Similarweb

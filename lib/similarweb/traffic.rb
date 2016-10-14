@@ -9,8 +9,8 @@ module Similarweb
       date = Date.today.prev_month.strftime("%m-%Y")
       params[:start] ||= date
       params[:end] ||= date
-
-      response = self.http_client.get "#{domain}/v1/traffic?#{to_query(params)}"
+      
+      response = self.http_client.get "#{domain}/total-traffic-and-engagement/visits?#{to_query(params)}"
       JSON(response.body)
     end
   end

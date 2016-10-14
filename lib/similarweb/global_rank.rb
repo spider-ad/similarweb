@@ -1,7 +1,7 @@
 require 'date'
 module Similarweb
-  module Pageviews
-    def pageviews(domain, params = {})
+  module GlobalRank
+    def global_rank(domain, params = {})
       params.merge!({
         :Userkey => self.api_key,
       })
@@ -10,7 +10,7 @@ module Similarweb
       params[:start] ||= date
       params[:end] ||= date
 
-      response = self.http_client.get "#{domain}/v1/pageviews", params
+      response = self.http_client.get "#{domain}/global-rank/global-rank?#{to_query(params)}"
       JSON(response.body)
     end
   end
