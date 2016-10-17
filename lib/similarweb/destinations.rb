@@ -3,7 +3,7 @@ module Similarweb
     def destinations(domain, params = {})
       params.merge!({
         :Format => "JSON",
-        :Userkey => self.api_key
+        :api_key => self.api_key
       })
 
       response = self.http_client.get "#{domain}/v1/leadingdestinationsites?#{to_query(params)}"

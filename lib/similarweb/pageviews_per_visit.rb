@@ -3,7 +3,7 @@ module Similarweb
   module PageviewsPerVisit
     def pageviews_per_visit(domain, params = {})
       params.merge!({
-        :Userkey => self.api_key,
+        :api_key => self.api_key,
       })
 
       date = Date.today.prev_month.strftime("%m-%Y")
