@@ -18,6 +18,7 @@ require 'similarweb/visit_duration'
 require 'similarweb/bounce_rate'
 require 'similarweb/pageviews_per_visit'
 require 'similarweb/global_rank'
+require 'similarweb/geo_distribution'
 require 'similarweb/client'
 
 module Similarweb

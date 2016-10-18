@@ -17,6 +17,7 @@ module Similarweb
     include PageviewsPerVisit
     include GlobalRank
     include BounceRate
+    include GeoDistribution
 
     attr_accessor :api_key, :http_client
 
