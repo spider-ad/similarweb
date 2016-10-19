@@ -14,8 +14,10 @@ module Similarweb
     include Tags
     include Traffic
     include VisitDuration
-    include Pageviews
+    include PageviewsPerVisit
+    include GlobalRank
     include BounceRate
+    include GeoDistribution
 
     attr_accessor :api_key, :http_client
 
@@ -33,7 +35,7 @@ module Similarweb
   private
 
     def make_http_client!
-      base_url = "https://api.similarweb.com/Site/"
+      base_url = "https://api.similarweb.com/v1/website/"
       self.http_client = Faraday.new(:url => base_url)
     end
 
